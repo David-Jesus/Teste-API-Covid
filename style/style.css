@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@400;500;600;700&family=Josefin+Slab:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600&family=Mulish:ital,wght@0,200;0,300;0,400;0,500;1,200;1,300;1,400&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root{ 
+    --font-primary: "Baloo Da 2", serif;
+    --font-secundary: "Josefin Slab", serif;
+    --font-action: "Mulish", serif;
+}
+
+body {
+    height: auto;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 100%;
+}
+
+.container {
+    margin: 0;
+    padding-top: 50px;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    background-color: rgba(79, 182, 139, 0.582);
+}
+
+h1{
+    color: rgb(31, 53, 73);
+
+}
+section {
+    width: 90%;
+    height: auto;
+    margin: 50px auto;
+    margin-bottom: 50px;
+    background-color: rgb(255, 255, 255);
+    box-sizing: border-box;
+    box-shadow: 0px 0px 3px rgb(0, 0, 0);
+    padding: 10px;
+    border-radius: 10px;
+}
+h4{
+    display: flex;
+    left: 0;
+    margin-bottom: 20px;
+    font-family: var(--font-action);
+    letter-spacing: 1.5px;
+}
+hr{
+    border: 0.1px solid black;
+}
+
+th {
+    background-color: #1a215e;
+    color: rgb(255, 255, 255);
+    width: 150px;
+    font-size: 15px;
+    font-family: var(--font-action) !important;
+    letter-spacing: 1.5px;
+}
+
+th, td {
+    font-family: var(--font-action);
+    border-bottom: 1px solid rgb(155, 155, 155);
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+tr:nth-child(even) {
+    background-color: rgb(247, 247, 247) !important;
+}
+
+tr:hover {
+    background-color: rgb(179, 179, 179) !important;
+}
+
+#piechart_3d{
+    width: 600px; 
+    height: 400px;
+    position: relative;
+    margin: 0px auto;
+    box-shadow: 0px 0px 3px #000;  
+}
+
+rect{
+    fill: #ffffff;
+  
+}
+
+#DataTables_Table_0_filter input{
+    height: 25px;
+    font-family: var(--font-action);   
+}
+
+#DataTables_Table_0_length select{
+    height: 25px;
+    font-family: var(--font-action); 
+    margin-bottom: 10px;
+}
+
+input:focus{
+    outline: none !important;
+    border-width: 1px;
+    border-color: #6f9acc;
+    box-shadow: 0px 0px 3px 1px #bcd0e7;
+}
+
+select:focus{
+    outline: none !important;
+    border-color: #7da0ad;
+    border-color: #6f9acc;
+    box-shadow: 0px 0px 3px 1px #bcd0e7;
+}
