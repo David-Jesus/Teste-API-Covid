@@ -4,7 +4,7 @@ $url = 'https://api.apify.com/v2/key-value-stores/TyToNta7jGKkpszMZ/records/LATE
 
 $ch = curl_init($url); //define a url a ser consumida
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true); //retorna a tranferencia de dados em forma de string
-$dado = json_decode(curl_exec($ch)); //faz a decodificacao, necessita de: curl_setopt($ch, CURLOPT_RETURNTRANSFER, true) para funcionar;
+$dado = json_decode(curl_exec($ch)); //faz a decodificacao, necessita de: curl_setopt($ch, CURLOPT_RETURNTRANSFER, true) para o correto funcionamento;
 
 //get nos elementos da api
 $recovered = $dado->recovered; 
@@ -34,7 +34,7 @@ $data = new DateTime($dado->lastUpdatedAtApify) //classe usado para modificar a 
         function drawChart() {
             var dados = google.visualization.arrayToDataTable([
                 ['Task', 'Hours per Day'],
-                ['Recuperados', <?= $recovered?>], //uso os valores trazidos do php da api
+                ['Recuperados', <?= $recovered?>],
                 ['Mortes', <?= $deceased ?>],
                 ['Infectados', <?=$infected ?>]
             ]);
@@ -70,12 +70,12 @@ $data = new DateTime($dado->lastUpdatedAtApify) //classe usado para modificar a 
 
                     <?php
                     $i = 0;
-                    foreach ($dado->infectedByRegion as $e) { //adiciono para $e o array infectedByRegion da api
+                    foreach ($dado->infectedByRegion as $e) { 
                         print "<tr>";
                         print "<td>$e->state</td>";
                         print "<td>$e->count</td>";
-                        if (property_exists($dado, "deceasedByRegion")) { //Converter o objeto php em string json, para pegar seus objetos pelo índice
-                            $a = json_encode($dado->deceasedByRegion[$i]->count); //pega de cada indice state e count, somente o count
+                        if (property_exists($dado, "deceasedByRegion")) {
+                            $a = json_encode($dado->deceasedByRegion[$i]->count); 
                             $i++;
                             echo "<td>$a</td>";
                         }
@@ -86,7 +86,7 @@ $data = new DateTime($dado->lastUpdatedAtApify) //classe usado para modificar a 
                 </tbody>
             </table>
         </section>
-        <div id="piechart_3d" style="color: red;"></div>
+        <div id="piechart_3d"></div>
     </div>
 </body>
 
